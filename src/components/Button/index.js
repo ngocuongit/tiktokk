@@ -12,6 +12,8 @@ function Button({
     text = false,
     disabled = false,
     rounded = false,
+    leftIcon = false,
+    rightIcon = false,
     small = false,
     large = false,
     children,
@@ -25,7 +27,11 @@ function Button({
         ...passProps,
     };
     if (disabled) {
-        delete props.onClick;
+        Object.keys(props).forEach((key) => {
+            if (key.startsWith('on') && typeof props[key] === 'function') {
+                delete props[key];
+            }
+        });
     }
     if (to) {
         props.to = to;
@@ -41,12 +47,16 @@ function Button({
         text,
         disabled,
         rounded,
+        leftIcon,
+        rightIcon,
         small,
         large,
     });
     return (
         <Comp className={classes} {...props}>
-            <span>{children}</span>
+            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+            <span className={cx('title')}>{children}</span>
+            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );
 }
