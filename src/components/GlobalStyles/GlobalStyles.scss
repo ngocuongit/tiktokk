@@ -1,11 +1,10 @@
 @import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,600&display=swap');
 
 :root {
     --primary: rgb(254, 44, 85);
     --black: #000;
     --text-color: #333;
-    --while: #ffff;
+    --white: #ffff;
 
     //default layout
     --default-layout-header-height: 64px;
@@ -23,7 +22,7 @@ html {
     font-size: 62.5%;
 }
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'ProximaNova', sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
@@ -38,6 +37,28 @@ button,
 a[href] {
     color: var(--text-color);
     text-decoration: none;
+}
+
+//fonts emmbeded
+@font-face {
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    src: url('/assets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 400;
+}
+@font-face {
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    src: url('/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: ProximaNova, Arial, Tahoma, PingFangSC, sans-serif;
+    src: url('/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 700;
+}
+@font-face {
+    font-family: SofiaPro, Arial, Tahoma, PingFangSC, sans-serif;
+    src: url('/assets/fonts/sofiapro-bold.woff');
+    font-weight: 700;
 }
 
 // custom tippy tooltip
